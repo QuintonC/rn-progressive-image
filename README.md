@@ -4,7 +4,7 @@ While building an application at work I created a component that I found useful.
 
 ## Example
 
-![ExampleImage](https://i.imgur.com/DN5Uz4n.gif)
+![ExampleImage](https://raw.githubusercontent.com/QuintonC/react-native-lazy-image/master/ezgif.com-resize.gif)
 
 ## Installation
 
