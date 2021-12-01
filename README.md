@@ -1,4 +1,4 @@
-<h1 align="center">react-native-lazy-image</h1>
+<h1 align="center">rn-lazy-image</h1>
 
 <div align="center">
     <strong>An easy to use, stylistically customizable lazy-loader for react-native's image component.</strong>
@@ -12,12 +12,8 @@
     <img src="https://img.shields.io/npm/v/react-native-lazy-image.svg?style=flat-square" alt="npm package version" />
   </a>
 
-  <a href="https://npmjs.org/package/react-native-lazy-image">
+  <a href="https://npmjs.org/package/rn-lazy-image">
     <img src="https://img.shields.io/npm/dm/react-native-lazy-image.svg?style=flat-square" alt="npm downloads" />
-  </a>
-
-  <a href="https://github.com/feross/standard">
-    <img src="https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square" alt="standard JS linter" />
   </a>
 
   <a href="https://github.com/QuintonC/react-native-lazy-image/blob/master/LICENSE.md">
@@ -52,7 +48,7 @@
 <br>
 
 <div align="center">
-  Built with ❤︎ by <a href="https://github.com/QuintonC">Quinton Chester</a> and <a href="https://github.com/QuintonC/react-native-lazy-image/graphs/contributors">contributors</a>
+  Built with <span role="emoji">🖤</span> by <a href="https://github.com/QuintonC">Quinton Chester.</a>
 </div>
 
 <h2>Table of Contents</h2>
@@ -60,6 +56,7 @@
   <li><a href="#usage">Usage</a></li>
   <li><a href="#props">Props</a></li>
   <li><a href="#contributing">Contributing</a></li>
+  <li><a href="#code-guidelines">Code Guidelines</a></li>
   <li><a href="#license">License</a></li>
 
 
@@ -98,9 +95,9 @@ At the core, this is the simplest form of usage:
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-Please follow the issue format.
+Please follow the issue format outlined at the beginning of issue creation when creating a new issue. Additionally, please search through issues to see if your specific issue has already been mentioned, is currently being addressed, or has been fixed in an upcoming release.
 
-To contribute properly please use gitflow and semver standards.
+To contribute properly please use [gitflow](https://medium.com/android-news/gitflow-with-github-c675aa4f606a) and [semver standards](https://semver.org/) as well as the <a href="code-guidelines">code guidelines.</a>
 1. Fork it.
 2. Create your feature branch: `git checkout -b feature/feature-name`
 3. Commit your changes: `git commit -am 'Add some feature'`
@@ -110,6 +107,54 @@ To contribute properly please use gitflow and semver standards.
 7. Submit a pull request
 
 Or open up [an issue](https://github.com/QuintonC/react-native-lazy-image/issues).
+## Code Guidelines
+
+### Imports
+```javascript
+// React
+import { useEffect, useState, ... } from 'react';
+
+// Packages
+import PackageName from 'npm-package-name';
+
+// Custom Components
+import MyComponent from 'components/MyComponent/MyComponent'; 
+
+// Props
+import props from './props';
+
+// Style 
+import style from './style';
+
+// Utility Functions
+import performRequest from 'utility/performRequest';
+
+// App Constants
+import { APP_NAME } from 'constants/constants';
+```
+
+### Naming Conventions
+Functions:
+```javascript
+const myCustomFunction = () => {
+	...
+}
+```
+
+Variables:
+```javascript
+const myCustomFunction = () => {
+  let this_is_a_variable;
+	...
+}
+```
+
+Parameters:
+```javascript
+const myCustomFunction = (_this_is_a_parameter) => {
+	...
+}
+```
 
 ## License
 Licensed under the [MIT](https://choosealicense.com/licenses/mit/) license.
