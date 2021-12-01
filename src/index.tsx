@@ -4,9 +4,6 @@ import { View, Animated } from "react-native";
 // Props
 import props from "./props";
 
-// Defaults
-import { default_timing_config, default_spring_config } from "./defaults";
-
 // Style
 import style from "./style";
 
@@ -14,9 +11,10 @@ export default ({
     small_source,
     large_source,
     type = "timing",
-    timing_config = default_timing_config,
-    spring_config = default_spring_config,
+    timing_config,
+    spring_config,
     initial_blur_radius = 3,
+    use_native_driver = true,
     ...props
 }: props) => {
     const [loaded, setLoaded] = useState(false),
@@ -35,12 +33,12 @@ export default ({
             ? Animated.timing(opacity, {
                   ...timing_config,
                   toValue: loaded ? 1 : 0,
-                  useNativeDriver: true,
+                  useNativeDriver: use_native_driver,
               }).start()
             : Animated.spring(opacity, {
                   ...spring_config,
                   toValue: loaded ? 1 : 0,
-                  useNativeDriver: true,
+                  useNativeDriver: use_native_driver,
               }).start();
     }, [loaded]);
 

@@ -1,23 +1,23 @@
-<h1 align="center">rn-lazy-image</h1>
+<h1 align="center">rn-progressive-image</h1>
 
 <div align="center">
-    <strong>An easy to use, stylistically customizable lazy-loader for react-native's image component.</strong>
+    <strong>An easy to use, stylistically customizable lazy-loader/progressive image display for react-native's image component.</strong>
 </div>
 
 <br>
 
 <div align="center">
 
-  <a href="https://npmjs.org/package/react-native-lazy-image">
-    <img src="https://img.shields.io/npm/v/react-native-lazy-image.svg?style=flat-square" alt="npm package version" />
+  <a href="https://npmjs.org/package/rn-progressive-image">
+    <img src="https://img.shields.io/npm/v/rn-progressive-image.svg?style=flat-square" alt="npm package version" />
   </a>
 
-  <a href="https://npmjs.org/package/rn-lazy-image">
-    <img src="https://img.shields.io/npm/dm/react-native-lazy-image.svg?style=flat-square" alt="npm downloads" />
+  <a href="https://npmjs.org/package/rn-progressive-image">
+    <img src="https://img.shields.io/npm/dm/rn-progressive-image.svg?style=flat-square" alt="npm downloads" />
   </a>
 
-  <a href="https://github.com/QuintonC/react-native-lazy-image/blob/master/LICENSE.md">
-    <img src="https://img.shields.io/npm/l/react-native-lazy-image.svg?style=flat-square" alt="project license" />
+  <a href="https://github.com/QuintonC/rn-progressive-image/blob/master/LICENSE.md">
+    <img src="https://img.shields.io/npm/l/rn-progressive-image.svg?style=flat-square" alt="project license" />
   </a>
 
   <a href="http://makeapullrequest.com">
@@ -31,16 +31,16 @@
 
 <div align="center">
 
-  <a href="https://github.com/QuintonC/react-native-lazy-image/watchers">
-    <img src="https://img.shields.io/github/watchers/QuintonC/react-native-lazy-image.svg?style=social" alt="Github Watch Badge" />
+  <a href="https://github.com/QuintonC/rn-progressive-image/watchers">
+    <img src="https://img.shields.io/github/watchers/QuintonC/rn-progressive-image.svg?style=social" alt="Github Watch Badge" />
   </a>
 
-  <a href="https://github.com/QuintonC/react-native-lazy-image/stargazers">
-    <img src="https://img.shields.io/github/stars/QuintonC/react-native-lazy-image.svg?style=social" alt="Github Star Badge" />
+  <a href="https://github.com/QuintonC/rn-progressive-image/stargazers">
+    <img src="https://img.shields.io/github/stars/QuintonC/rn-progressive-image.svg?style=social" alt="Github Star Badge" />
   </a>
 
-  <a href="https://twitter.com/intent/tweet?text=Check%20out%20react-native-lazy-image!%20https://github.com/QuintonC/react-native-lazy-image%20%F0%9F%91%8D">
-    <img src="https://img.shields.io/twitter/url/https/github.com/QuintonC/react-native-lazy-image.svg?style=social" alt="Tweet" />
+  <a href="https://twitter.com/intent/tweet?text=Check%20out%20rn-progressive-image!%20https://github.com/QuintonC/rn-progressive-image%20%F0%9F%91%8D">
+    <img src="https://img.shields.io/twitter/url/https/github.com/QuintonC/rn-progressive-image.svg?style=social" alt="Tweet" />
   </a>
 
 </div>
@@ -48,7 +48,7 @@
 <br>
 
 <div align="center">
-  Built with <span role="emoji">🖤</span> by <a href="https://github.com/QuintonC">Quinton Chester.</a>
+  Built with <span role="emoji">🖤&nbsp;</span> by <a href="https://github.com/QuintonC">Quinton Chester.</a>
 </div>
 
 <h2>Table of Contents</h2>
@@ -63,13 +63,13 @@
 ## Installation
 
 ```bash
-$ npm install react-native-lazy-image
+$ npm install rn-progressive-image
 ```
 
 ## Usage
 At the top of your file:
 ```javascript
-import LazyImage from 'react-native-lazy-image'
+import LazyImage from 'rn-progressive-image'
 ```
 
 At the core, this is the simplest form of usage:
@@ -106,7 +106,7 @@ To contribute properly please use [gitflow](https://medium.com/android-news/gitf
 6. ????
 7. Submit a pull request
 
-Or open up [an issue](https://github.com/QuintonC/react-native-lazy-image/issues).
+Or open up [an issue](https://github.com/QuintonC/rn-progressive-image/issues).
 ## Code Guidelines
 
 ### Imports
