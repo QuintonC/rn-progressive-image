@@ -1,31 +1,35 @@
 {
-    "name": "react-native-lazy-image",
+    "name": "rn-progressive-image",
     "version": "1.0.0",
     "description": "A package that handles lazy image loading for React Native projects.",
     "main": "index.tsx",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
+        "test": "jest"
     },
     "repository": {
         "type": "git",
-        "url": "git+ssh://git@github.com/QuintonC/react-native-lazy-image.git"
+        "url": "git+ssh://git@github.com/QuintonC/rn-progressive-image.git"
     },
     "author": "Quinton Chester <quintonchester@gmail.com>",
     "contributors": [],
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/QuintonC/react-native-lazy-image/issues"
+        "url": "https://github.com/QuintonC/rn-progressive-image/issues"
     },
-    "homepage": "https://github.com/QuintonC/react-native-lazy-image#readme",
-    "dependencies": {},
+    "homepage": "https://github.com/QuintonC/rn-progressive-image#readme",
     "devDependencies": {
+        "@testing-library/react-native": "^8.0.0",
+        "@types/jest": "^27.0.3",
         "@types/react": "^17.0.37",
         "@types/react-native": "^0.66.6",
         "babel-eslint": "^10.1.0",
         "babel-jest": "^27.4.2",
         "babel-preset-react-native": "^4.0.1",
+        "jest": "^27.4.2",
         "prop-types": "^15.7.2",
         "react": "^17.0.2",
-        "react-native": "^0.66.3"
+        "react-native": "^0.66.3",
+        "ts-jest": "^27.0.7",
+        "typescript": "^4.5.2"
     }
 }

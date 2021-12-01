@@ -1,7 +1,7 @@
-import { StyleSheet, useWindowDimensions } from "react-native";
+import { StyleSheet, Dimensions } from "react-native";
 
 // Get our dimensions from the useWindowDimensions hook
-const { width } = useWindowDimensions();
+const width = Dimensions.get("window").width;
 
 export default StyleSheet.create({
     container: {
