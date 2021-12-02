@@ -8,7 +8,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+ssh://git@github.com/QuintonC/rn-progressive-image.git"
+        "url": "git@github.com/QuintonC/rn-progressive-image.git"
     },
     "author": "Quinton Chester <quintonchester@gmail.com>",
     "contributors": [],
@@ -16,6 +16,33 @@
     "bugs": {
         "url": "https://github.com/QuintonC/rn-progressive-image/issues"
     },
+    "keywords": [
+        "RN",
+        "image",
+        "lazy image",
+        "lazy-image",
+        "progressive image",
+        "progressive-image",
+        "native",
+        "react",
+        "react native",
+        "react native lazy",
+        "react native lazy image",
+        "react-native-lazy",
+        "react-native-lazy-image",
+        "react native progressive",
+        "react native progressive image",
+        "react-native-progressive",
+        "react-native-progressive-image",
+        "rn-lazy",
+        "rn-lazy-image",
+        "rn progressive",
+        "rn progressive image",
+        "rn-progressive",
+        "rn-progressive-image",
+        "react-native",
+        "rn"
+    ],
     "homepage": "https://github.com/QuintonC/rn-progressive-image#readme",
     "devDependencies": {
         "@testing-library/react-native": "^8.0.0",
