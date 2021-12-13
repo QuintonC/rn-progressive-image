@@ -1,0 +1,13 @@
+diff --git a/node_modules/react-native-animatable/typings/react-native-animatable.d.ts b/node_modules/react-native-animatable/typings/react-native-animatable.d.ts
+index 32a057c..24c7351 100644
+--- a/node_modules/react-native-animatable/typings/react-native-animatable.d.ts
++++ b/node_modules/react-native-animatable/typings/react-native-animatable.d.ts
+@@ -133,7 +133,7 @@ interface AnimatableProperties<S extends {}> {
+ }
+ 
+ type AnimatableAnimationMethods =
+-    Partial<{ [k in Animation]: (duration?: number) => Promise<{finished: boolean}> }>;
++    { [k in Animation]: (duration?: number) => Promise<{finished: boolean}> };
+ 
+ interface AnimatableComponent<P extends {}, S extends {}> extends
+     NativeMethodsMixin,
