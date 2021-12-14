@@ -8,15 +8,17 @@ import Reanimated from "./Reanimated";
 // Props
 import { CoreProps } from "./props";
 
-export default ({ animation_library = "reanimated", ...props }: CoreProps) => {
-    switch (animation_library) {
-        case "animatable":
-            return <Animatable {...props} />;
-
-        case "animated":
-            return <Animated {...props} />;
-
-        default:
-            return <Reanimated {...props} />;
+const ProgressiveImage = ({
+    animation_library = "reanimated",
+    ...props
+}: CoreProps) => {
+    if (animation_library === "animatable") {
+        return <Animatable {...props} />;
+    } else if (animation_library === "animated") {
+        return <Animated {...props} />;
+    } else {
+        return <Reanimated {...props} />;
     }
 };
+
+export default ProgressiveImage;
