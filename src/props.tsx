@@ -22,6 +22,7 @@ export default interface ProgressiveImageProps {
     style?: StyleProp<ViewStyle>;
     initial_blur_radius?: ImagePropsIOS["blurRadius"];
     animation_duration?: number;
+    use_native_driver?: boolean;
 }
 
 /*
@@ -32,7 +33,6 @@ export default interface ProgressiveImageProps {
 export interface AnimatableProps extends ProgressiveImageProps {
     animation_in?: Animatable.Animation;
     animation_out?: Animatable.Animation;
-    use_native_driver?: boolean;
 }
 
 /*
@@ -44,7 +44,6 @@ export interface AnimatedProps extends ProgressiveImageProps {
     type?: "spring" | "timing";
     timing_config?: Animated.TimingAnimationConfig;
     spring_config?: Animated.SpringAnimationConfig;
-    use_native_driver?: boolean;
 }
 
 /*
