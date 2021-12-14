@@ -10,7 +10,7 @@ import Animated, {
 } from "react-native-reanimated";
 
 // Props
-import props from "../props";
+import { ReanimatedProps } from "../props";
 
 // Style
 import style from "../style";
@@ -23,7 +23,7 @@ export default ({
     in_easing,
     out_easing,
     ...props
-}: props) => {
+}: ReanimatedProps) => {
     const [loaded, setLoaded] = useState(false),
         large_opacity = useSharedValue(0),
         small_opacity = useSharedValue(1),

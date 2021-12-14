@@ -5,7 +5,7 @@ import { View, Image } from "react-native";
 import * as Animatable from "react-native-animatable";
 
 // Props
-import props from "../props";
+import { AnimatableProps } from "../props";
 
 // Style
 import style from "../style";
@@ -14,12 +14,12 @@ export default ({
     small_source,
     large_source,
     initial_blur_radius = 3,
+    animation_duration = 350,
     animation_in,
     animation_out,
-    animation_duration = 350,
     use_native_driver,
     ...props
-}: props) => {
+}: AnimatableProps) => {
     const [loaded, setLoaded] = useState(false),
         small_image = useRef<Animatable.Image & Image>(null),
         large_image = useRef<Animatable.Image & Image>(null);

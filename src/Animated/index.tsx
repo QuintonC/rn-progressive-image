@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { View, Animated } from "react-native";
 
 // Props
-import props from "../props";
+import { AnimatedProps } from "../props";
 
 // Style
 import style from "../style";
@@ -10,14 +10,14 @@ import style from "../style";
 export default ({
     small_source,
     large_source,
+    initial_blur_radius = 3,
+    animation_duration = 350,
     type = "timing",
     timing_config,
     spring_config,
-    initial_blur_radius = 3,
-    animation_duration = 350,
     use_native_driver = true,
     ...props
-}: props) => {
+}: AnimatedProps) => {
     const [loaded, setLoaded] = useState(false),
         opacity = useRef(new Animated.Value(0)).current;
 

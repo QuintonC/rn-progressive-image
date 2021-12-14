@@ -6,12 +6,12 @@ import Animated from "./Animated";
 import Reanimated from "./Reanimated";
 
 // Props
-import { CoreProps } from "./props";
+import ProgressiveImageProps from "./props";
 
 const ProgressiveImage = ({
     animation_library = "reanimated",
     ...props
-}: CoreProps) => {
+}: ProgressiveImageProps) => {
     if (animation_library === "animatable") {
         return <Animatable {...props} />;
     } else if (animation_library === "animated") {
