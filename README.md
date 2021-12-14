@@ -55,8 +55,7 @@
   <li><a href="#install">Install</a></li>
   <li><a href="#usage">Usage</a></li>
   <li><a href="#props">Props</a></li>
-  <li><a href="#using-reanimatable">Animation Specification</a></li>
-  <li><a href="#animation-type-information">Animation Specification</a></li>
+  <li><a href="#animation-type-information">Animation Type Information</a></li>
   <li><a href="#contributing">Contributing</a></li>
   <li><a href="#code-guidelines">Code Guidelines</a></li>
   <li><a href="#license">License</a></li>
@@ -172,3 +171,6 @@ const myCustomFunction = (_this_is_a_parameter) => {
 	...
 }
 ```
+
+## License
+Licensed under the MIT License.
