@@ -64,7 +64,7 @@
 ## Installation
 
 ```bash
-$ npm install rn-progressive-image
+$ npm install patch-package rn-progressive-image
 ```
 
 Note: If you are going to use the default `animation_type` of `reanimated`, you must also follow these additonal installation instructions.

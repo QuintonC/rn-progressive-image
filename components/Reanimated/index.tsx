@@ -10,10 +10,10 @@ import Animated, {
 } from "react-native-reanimated";
 
 // Props
-import { ReanimatedProps } from "../props";
+import { ReanimatedProps } from "../../props";
 
 // Style
-import style from "../style";
+import style from "../../style";
 
 export default ({
     small_source,

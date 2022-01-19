@@ -2,10 +2,10 @@ import React, { useEffect, useRef, useState } from "react";
 import { View, Animated } from "react-native";
 
 // Props
-import { AnimatedProps } from "../props";
+import { AnimatedProps } from "../../props";
 
 // Style
-import style from "../style";
+import style from "../../style";
 
 export default ({
     small_source,

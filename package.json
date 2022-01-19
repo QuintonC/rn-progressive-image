@@ -1,6 +1,6 @@
 {
     "name": "rn-progressive-image",
-    "version": "2.0.0",
+    "version": "2.0.1",
     "description": "A package that handles lazy image loading for React Native projects.",
     "main": "index.tsx",
     "scripts": {

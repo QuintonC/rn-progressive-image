@@ -5,10 +5,10 @@ import { View, Image } from "react-native";
 import * as Animatable from "react-native-animatable";
 
 // Props
-import { AnimatableProps } from "../props";
+import { AnimatableProps } from "../../props";
 
 // Style
-import style from "../style";
+import style from "../../style";
 
 export default ({
     small_source,

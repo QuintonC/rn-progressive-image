@@ -1,6 +1,6 @@
 import React from "react";
 import { render } from "@testing-library/react-native";
-import ProgressiveImage from "../src";
+import ProgressiveImage from "..";
 
 describe("AnimatableProgressiveImage", () => {
     jest.useFakeTimers();
