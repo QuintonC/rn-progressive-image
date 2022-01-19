@@ -1,7 +1,7 @@
 <h1 align="center">rn-progressive-image</h1>
 
 <div align="center">
-    <strong>An easy to use, stylistically customizable lazy-loader/progressive image display for react-native's image component.</strong>
+    <strong>An easy to use, stylistically customizable lazy-loader/progressive image display for react-natives image component.</strong>
 </div>
 
 <br>
@@ -88,15 +88,13 @@ At the core, this is the simplest form of usage:
 ## Props
 | Prop                  | Default      | Required | Description                                                                         |
 | :-------------------- | :----------- | :------- | :---------------------------------------------------------------------------------- |
-| `animation_library`      | `reanimated` | false    | The animation library that you would like to choose. At the moment, we make use of [Reanimated](https://docs.swmansion.com/react-native-reanimated/), [Animatable](https://github.com/oblador/react-native-animatable), and the built-in Animated API |
+| `animation_library`      | `reanimated` | false    | The animation library that you would like to choose. At the moment, we make use of [Reanimated](https://docs.swmansion.com/react-native-reanimated/) and the built-in Animated API |
 | `small_source`        |              | true     | The source for the smallest image that will initially be blurred and animated out   |
 | `large_source`        |              | true     | The source for the larger image that we will be lazily loading                      |
 | `initial_blur_radius` | `3`          | false    | The initial blur amount for the small image. Only present until the large image has been loaded and animates in. |
 | `use_native_driver`   | `true`       | false    | Specify whether you would like to use the native driver for animations. Recommended to leave this untouched as `true` is the default value. This is only applicable if and when `animation_library` is `animated` |
 | `style`               |              | false    | The style of the image container. Images use `StyleSheet.absoluteFillObject`, so define your desired style here. |
 | `animation_duration`  | `350`        | false    | The transition duration. Only applicable when using `reanimated` or `animated` with `type` prop equal to `timing`. |
-| `animation_in`        |              | false    | Only applicable when using `animatable` for `animation_library`. Make use of any of the following [animations](https://github.com/oblador/react-native-animatable#animations-2).  |
-| `animation_out`       |              | false    | Only applicable when using `animatable` for `animation_library`. Make use of any of the following [animations](https://github.com/oblador/react-native-animatable#animations-2).  |
 | `type`                | `timing`     | false    | The type of animation to use. Either `spring` or `timing`.                          |
 | `timing_config`       |              | false    | The configuration for the Animated.timing (Animated API) animation.                 |
 | `spring_config`       |              | false    | The configuration for the Animated.spring (Animated API) animation.                 |
@@ -104,9 +102,7 @@ At the core, this is the simplest form of usage:
 | `out_easing`          |              | false    | Only applicable when using `reanimated` for `animation_library`, this is the easing that is applied as the large image fades in.  |
 
 ## Animation Type Information
-If you're not familiar with either Reanimated or Animatable no worries. I'm here to break down the benefits of either if you'd like. By default we use Reanimated. Reanimated is great because in React Native applications, all execution happens outside of the application's main thread. This helps prevent frame drops. However, event driven interactions are usually at least a single frame behind (sometimes more) since all of the updates are happening on a separate thread. Depending on how clean and well-structured your code is, this could mean that the animations are even further behind. Your JavaScript plays many roles, animation should be the last one we have to worry about (after all, we want the animations to happen immediately and feel super smooth). Reanimated takes care of all of that for us. Reanimated offloads animation and event handling logic off of the JavaScript thread and moves them onto the UI thread. Want to learn more about Reanimated? Visit their official docs [here](https://docs.swmansion.com/react-native-reanimated/docs/).
-
-Animatable is another good animation library. It's got a lot of powerful transitions, animations, and makes use of declarative animatable components. If you are looking for a quick, easy to use animation library I would recommend checking this one out as well. It comes power packed with tons of great animations out of the box that you can use in this package as well. I'd of course, recommend sticking to only `fadeIn` for  `animation_in` and `fadeOut` for `animation_out`.
+If you're not familiar with either Reanimated no worries. I'm here to break down the benefits of either if you'd like. By default we use Reanimated. Reanimated is great because in React Native applications, all execution happens outside of the application's main thread. This helps prevent frame drops. However, event driven interactions are usually at least a single frame behind (sometimes more) since all of the updates are happening on a separate thread. Depending on how clean and well-structured your code is, this could mean that the animations are even further behind. Your JavaScript plays many roles, animation should be the last one we have to worry about (after all, we want the animations to happen immediately and feel super smooth). Reanimated takes care of all of that for us. Reanimated offloads animation and event handling logic off of the JavaScript thread and moves them onto the UI thread. Want to learn more about Reanimated? Visit their official docs [here](https://docs.swmansion.com/react-native-reanimated/docs/).
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
