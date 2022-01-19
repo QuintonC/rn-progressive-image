@@ -7,7 +7,6 @@ import {
 } from "react-native";
 
 // Packages
-import * as Animatable from "react-native-animatable";
 import { WithTimingConfig } from "react-native-reanimated";
 
 /*
@@ -18,21 +17,11 @@ import { WithTimingConfig } from "react-native-reanimated";
 export default interface ProgressiveImageProps {
     small_source: ImageProps["source"];
     large_source: ImageProps["source"];
-    animation_library?: "animatable" | "animated" | "reanimated";
+    animation_library?: "animated" | "reanimated";
     style?: StyleProp<ViewStyle>;
     initial_blur_radius?: ImagePropsIOS["blurRadius"];
     animation_duration?: number;
     use_native_driver?: boolean;
-}
-
-/*
- *
- * Animatable Props
- *
- */
-export interface AnimatableProps extends ProgressiveImageProps {
-    animation_in?: Animatable.Animation;
-    animation_out?: Animatable.Animation;
 }
 
 /*

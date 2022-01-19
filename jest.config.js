@@ -12,7 +12,7 @@ module.exports = {
         "^.+\\.tsx?$": "ts-jest",
     },
     transformIgnorePatterns: [
-        "node_modules/(?!(@react-native|react-native|react-native-animatable|react-native-reanimated)/)",
+        "node_modules/(?!(@react-native|react-native|react-native-reanimated)/)",
     ],
     moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
 };
