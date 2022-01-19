@@ -8,7 +8,7 @@ import Reanimated from "./components/Reanimated";
 // Props
 import ProgressiveImageProps from "./props";
 
-const ProgressiveImage = ({
+export const ProgressiveImage = ({
     animation_library = "reanimated",
     ...props
 }: ProgressiveImageProps) => {
@@ -20,5 +20,3 @@ const ProgressiveImage = ({
         return <Reanimated {...props} />;
     }
 };
-
-export default ProgressiveImage;
