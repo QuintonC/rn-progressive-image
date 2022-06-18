@@ -1,6 +1,6 @@
 {
     "name": "rn-progressive-image",
-    "version": "2.0.1",
+    "version": "3.0.0",
     "description": "A package that handles lazy image loading for React Native projects.",
     "main": "index.tsx",
     "scripts": {
@@ -45,23 +45,24 @@
     ],
     "homepage": "https://github.com/QuintonC/rn-progressive-image#readme",
     "devDependencies": {
-        "@babel/core": "^7.16.0",
-        "@babel/preset-env": "^7.16.4",
-        "@testing-library/react-native": "^8.0.0",
-        "@types/jest": "^27.0.3",
-        "@types/react": "^17.0.37",
-        "@types/react-native": "^0.66.6",
+        "@babel/core": "^7.18.5",
+        "@babel/preset-env": "^7.18.2",
+        "@types/jest": "^28.1.2",
+        "@types/react": "^18.0.14",
+        "@types/react-native": "^0.67.8",
         "babel-eslint": "^10.1.0",
-        "babel-jest": "^27.4.2",
+        "babel-jest": "^28.1.1",
         "babel-preset-react-native": "^4.0.1",
-        "jest": "^27.4.2",
-        "prop-types": "^15.7.2",
-        "react": "^17.0.2",
-        "react-native": "^0.66.3",
-        "ts-jest": "^27.0.7",
-        "typescript": "^4.5.2"
+        "jest": "^28.1.1",
+        "prop-types": "^15.8.1",
+        "react": "17.0.2",
+        "react-native": "^0.68.2",
+        "react-native-reanimated": "^2.8.0",
+        "ts-jest": "^28.0.5",
+        "typescript": "^4.7.4"
     },
     "dependencies": {
-        "react-native-reanimated": "^2.3.0"
+        "react-native-linear-gradient": "^2.5.6",
+        "react-native-shimmer-placeholder": "^2.0.8"
     }
 }

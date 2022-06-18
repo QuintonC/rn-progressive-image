@@ -1,7 +1,8 @@
 <h1 align="center">rn-progressive-image</h1>
 
 <div align="center">
-    <strong>An easy to use, stylistically customizable lazy-loader/progressive image display for react-natives image component.</strong>
+    <strong>An easy to use, stylistically customizable lazy-loader/progressive image display for react-native.</strong>
+    <p>This package includes the ability to implement a shimmer placeholder while your image loads, caching for your </p>
 </div>
 
 <br>
@@ -67,7 +68,13 @@
 $ npm install patch-package rn-progressive-image
 ```
 
-Note: If you are going to use the default `animation_type` of `reanimated`, you must also follow these additonal installation instructions.
+Note: This package used the following packages, which have their own installation instructions as well. Please ensure that you follow **all** installation instructions, otherwise the package may not work as expected.
+
+shimmerplaceholder
+lineargradient
+asyncstorage -- caching
+
+
 [Reanimated Installation Instructions for Android](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/installation/#android)
 [Reanimated Installation Instructions for iOS](https://docs.swmansion.com/react-native-reanimated/docs/fundamentals/installation/#ios)
 
@@ -101,9 +108,6 @@ At the core, this is the simplest form of usage:
 | `in_easing`           |              | false    | Only applicable when using `reanimated` for `animation_library`, this is the easing that is applied as the small image fades out. |
 | `out_easing`          |              | false    | Only applicable when using `reanimated` for `animation_library`, this is the easing that is applied as the large image fades in.  |
 
-## Animation Type Information
-If you're not familiar with either Reanimated no worries. I'm here to break down the benefits of either if you'd like. By default we use Reanimated. Reanimated is great because in React Native applications, all execution happens outside of the application's main thread. This helps prevent frame drops. However, event driven interactions are usually at least a single frame behind (sometimes more) since all of the updates are happening on a separate thread. Depending on how clean and well-structured your code is, this could mean that the animations are even further behind. Your JavaScript plays many roles, animation should be the last one we have to worry about (after all, we want the animations to happen immediately and feel super smooth). Reanimated takes care of all of that for us. Reanimated offloads animation and event handling logic off of the JavaScript thread and moves them onto the UI thread. Want to learn more about Reanimated? Visit their official docs [here](https://docs.swmansion.com/react-native-reanimated/docs/).
-
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
@@ -119,9 +123,9 @@ To contribute properly please use [gitflow](https://medium.com/android-news/gitf
 7. Submit a pull request
 
 Or open up [an issue](https://github.com/QuintonC/rn-progressive-image/issues).
-## Code Guidelines
 
-#### Imports
+#### Import structure to follow when contributing
+
 ```javascript
 // React
 import { useEffect, useState, ... } from 'react';
@@ -130,43 +134,22 @@ import { useEffect, useState, ... } from 'react';
 import PackageName from 'npm-package-name';
 
 // Custom Components
-import MyComponent from 'components/MyComponent/MyComponent'; 
+import { MyComponent } from 'components'; 
 
 // Props
-import props from './props';
+import { PropTypeOne, PropTypeTwo } from './props';
 
 // Style 
 import style from './style';
 
 // Utility Functions
-import performRequest from 'utility/performRequest';
+import { performRequest } from 'utils';
 
 // App Constants
-import { APP_NAME } from 'constants/constants';
+import { APP_NAME } from 'constants/index';
 ```
 
-#### Naming Conventions
-Functions:
-```javascript
-const myCustomFunction = () => {
-	...
-}
-```
-
-Variables:
-```javascript
-const myCustomFunction = () => {
-  let this_is_a_variable;
-	...
-}
-```
-
-Parameters:
-```javascript
-const myCustomFunction = (_this_is_a_parameter) => {
-	...
-}
-```
+#### Versioning
 
 ## License
 Licensed under the MIT License.
