@@ -7,22 +7,20 @@ import Animated, {
     withTiming,
     Easing,
 } from 'react-native-reanimated';
-import { createShimmerPlaceholder } from 'react-native-shimmer-placeholder';
-import LinearGradient from 'react-native-linear-gradient';
+
+// Components
+import { ShimmerEffect } from './components/index';
 
 // Style
 import BaseStyle from './style';
 
+// Constants
+import { athensGray, iron } from './constants';
+
 // Props
 import { ProgressiveImageProps } from './types';
 
-// Constants
-import { athensGray, iron, silver } from './constants';
-
-const ShimmerPlaceholder = createShimmerPlaceholder(LinearGradient);
-
-export default ({
-    withShimmer,
+const ProgressiveImage = ({
     smallSource,
     largeSource,
     style,
@@ -30,8 +28,9 @@ export default ({
     inEasing,
     outEasing,
     animationDuration = 350,
-    shimmerColors = [athensGray, iron, silver],
-    cachePrefix,
+    shimmerColors = [athensGray, iron, athensGray],
+    shimmerDuration = 1000,
+    withShimmer,
 }: ProgressiveImageProps) => {
     const [loaded, setLoaded] = useState(false);
     const [placeholderShouldRender, setPlaceholderShouldRender] =
@@ -44,21 +43,16 @@ export default ({
         return {
             opacity: withTiming(largeOpacity.value, {
                 duration: animationDuration,
-                easing:
-                    inEasing !== undefined
-                        ? inEasing
-                        : Easing.bezier(0.83, 0, 0.17, 1),
+                easing: inEasing ?? Easing.bezier(0.83, 0, 0.17, 1),
             }),
         };
     });
+
     const placeholderStyle = useAnimatedStyle(() => {
         return {
             opacity: withTiming(placeholderOpacity.value, {
                 duration: animationDuration,
-                easing:
-                    outEasing !== undefined
-                        ? outEasing
-                        : Easing.bezier(0.83, 0, 0.17, 1),
+                easing: outEasing ?? Easing.bezier(0.83, 0, 0.17, 1),
             }),
         };
     });
@@ -92,14 +86,20 @@ export default ({
                     {smallSource ? (
                         <Animated.Image
                             style={{ ...StyleSheet.absoluteFillObject }}
-                            blurRadius={
-                                initialBlurRadius ? initialBlurRadius : 3
-                            }
+                            blurRadius={initialBlurRadius ?? 3}
                             source={smallSource}
                         />
+                    ) : withShimmer ? (
+                        <ShimmerEffect
+                            colors={shimmerColors}
+                            duration={shimmerDuration}
+                        />
                     ) : (
-                        <ShimmerPlaceholder
-                            style={{ ...StyleSheet.absoluteFillObject }}
+                        <View
+                            style={{
+                                ...StyleSheet.absoluteFillObject,
+                                backgroundColor: athensGray,
+                            }}
                         />
                     )}
                 </Animated.View>
@@ -113,3 +113,5 @@ export default ({
         </View>
     );
 };
+
+export default ProgressiveImage;

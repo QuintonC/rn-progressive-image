@@ -149,7 +149,8 @@ import { performRequest } from 'utils';
 import { APP_NAME } from 'constants/index';
 ```
 
-#### Versioning
+## Versions
+Document what changed in versions.
 
 ## License
 Licensed under the MIT License.

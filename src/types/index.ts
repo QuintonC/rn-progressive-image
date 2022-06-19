@@ -4,6 +4,20 @@ import { WithTimingConfig } from 'react-native-reanimated';
 
 /*
  *
+ * RequireAtLeastOne
+ *
+ */
+type RequireAtLeastOne<T, Keys extends keyof T = keyof T> = Pick<
+    T,
+    Exclude<keyof T, Keys>
+> &
+    {
+        [K in Keys]-?: Required<Pick<T, K>> &
+            Partial<Pick<T, Exclude<Keys, K>>>;
+    }[Keys];
+
+/*
+ *
  * RequireOnlyOne
  *
  */
@@ -38,14 +52,20 @@ interface BaseProps {
     // Shimmer customization
     // You can customize the colors of your shimmer if you'd like.
     shimmerColors?: string[];
-
-    // Cache prefix.
-    // This library makes use of caching of your images to ensure that images load quickly
-    // After each initial load of an image.
-    cachePrefix?: string;
+    shimmerDuration?: number;
 }
 
 export type ProgressiveImageProps = RequireOnlyOne<
     BaseProps,
     'withShimmer' | 'smallSource'
 >;
+
+/*
+ *
+ * ShimmerEffect Props
+ *
+ */
+export interface ShimmerEffectProps {
+    colors: string[];
+    duration: number;
+}
