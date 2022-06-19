@@ -6,6 +6,7 @@ import Animated, {
     useAnimatedStyle,
     withTiming,
     Easing,
+    runOnJS,
 } from 'react-native-reanimated';
 
 // Components
@@ -56,12 +57,8 @@ const ProgressiveImage = ({
                     duration: animationDuration,
                     easing: outEasing,
                 },
-                () => {
-                    if (loaded) {
-                        // This component no longer needs to be rendered, so we can dispose of it here.
-                        setPlaceholderShouldRender(false);
-                    }
-                },
+                () => loaded && runOnJS(setPlaceholderShouldRender)(false),
+                // This component no longer needs to be rendered, so we can dispose of it here.
             ),
         };
     });
