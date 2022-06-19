@@ -26,7 +26,7 @@ const ProgressiveImage = ({
     style,
     initialBlurRadius,
     inEasing = Easing.bezier(0.65, 0, 0.35, 1),
-    outEasing = Easing.bezier(0.65, 0, 0.35, 1),,
+    outEasing = Easing.bezier(0.65, 0, 0.35, 1),
     animationDuration = 350,
     shimmerColors = [athensGray, iron, athensGray],
     shimmerDuration = 1000,
@@ -43,22 +43,26 @@ const ProgressiveImage = ({
         return {
             opacity: withTiming(largeOpacity.value, {
                 duration: animationDuration,
-                easing: inEasing
+                easing: inEasing,
             }),
         };
     });
 
     const placeholderStyle = useAnimatedStyle(() => {
         return {
-            opacity: withTiming(placeholderOpacity.value, {
-                duration: animationDuration,
-                easing: outEasing,
-            }, () => {
-                if (loaded) {
-                    // This component no longer needs to be rendered, so we can dispose of it here.
-                    setPlaceholderShouldRender(false)
-                }
-            }),
+            opacity: withTiming(
+                placeholderOpacity.value,
+                {
+                    duration: animationDuration,
+                    easing: outEasing,
+                },
+                () => {
+                    if (loaded) {
+                        // This component no longer needs to be rendered, so we can dispose of it here.
+                        setPlaceholderShouldRender(false);
+                    }
+                },
+            ),
         };
     });
 
@@ -70,9 +74,9 @@ const ProgressiveImage = ({
                 () => {
                     placeholderOpacity.value = 0;
                 },
-                // Give this a slight delay so that we don't run 
+                // Give this a slight delay so that we don't run
                 // into issues with flashes of empty content
-                animationDuration * .66
+                animationDuration * 0.66,
             );
 
             // Cleanup function
