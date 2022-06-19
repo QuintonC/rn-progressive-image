@@ -18,6 +18,7 @@ export default StyleSheet.create({
         width: width * 0.5,
         height: width * 0.5,
         backgroundColor: iron,
+        overflow: 'hidden',
     },
     image: {
         ...StyleSheet.absoluteFillObject,

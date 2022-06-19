@@ -39,7 +39,7 @@ export default ({ colors, duration }: ShimmerEffectProps) => {
     return (
         <View
             style={{
-                width: 250,
+                ...StyleSheet.absoluteFillObject,
                 overflow: 'hidden',
                 backgroundColor: colors[0],
             }}>

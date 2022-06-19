@@ -3,6 +3,7 @@ declare const _default: {
         width: number;
         height: number;
         backgroundColor: string;
+        overflow: "hidden";
     };
     image: {
         position: "absolute";
