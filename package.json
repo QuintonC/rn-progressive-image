@@ -2,20 +2,14 @@
     "name": "rn-progressive-image",
     "version": "3.0.0",
     "description": "A package that handles lazy image loading for React Native projects.",
-    "main": "index.tsx",
-    "scripts": {
-        "test": "jest"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git@github.com/QuintonC/rn-progressive-image.git"
-    },
-    "author": "Quinton Chester <quintonchester@gmail.com>",
-    "contributors": [],
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/QuintonC/rn-progressive-image/issues"
-    },
+    "main": "lib/commonjs/index",
+    "module": "lib/module/index",
+    "types": "lib/typescript/index.d.ts",
+    "react-native": "src/index.ts",
+    "files": [
+        "src",
+        "lib"
+    ],
     "keywords": [
         "RN",
         "image",
@@ -43,7 +37,24 @@
         "react-native",
         "rn"
     ],
+    "repository": {
+        "type": "git",
+        "url": "git@github.com/QuintonC/rn-progressive-image.git"
+    },
+    "author": "Quinton Chester <quintonchester@gmail.com>",
+    "contributors": [],
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/QuintonC/rn-progressive-image/issues"
+    },
     "homepage": "https://github.com/QuintonC/rn-progressive-image#readme",
+    "scripts": {
+        "typescript": "tsc --skipLibCheck --noEmit",
+        "lint": "eslint \"**/*.{js,ts,tsx}\"",
+        "build": "bob build && npm run copy-dts && npm run delete-dts.js",
+        "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" lib/typescript",
+        "delete-dts.js": "find ./lib/commonjs -name '*.d.js*' -delete && find ./lib/module -name '*.d.js*' -delete"
+    },
     "devDependencies": {
         "@babel/core": "^7.18.5",
         "@babel/preset-env": "^7.18.2",
@@ -53,13 +64,30 @@
         "babel-eslint": "^10.1.0",
         "babel-jest": "^28.1.1",
         "babel-preset-react-native": "^4.0.1",
+        "copyfiles": "^2.4.1",
         "jest": "^28.1.1",
         "prop-types": "^15.8.1",
         "react": "17.0.2",
         "react-native": "^0.68.2",
+        "react-native-builder-bob": "^0.18.2",
         "react-native-linear-gradient": "^2.5.6",
         "react-native-reanimated": "^2.8.0",
         "ts-jest": "^28.0.5",
         "typescript": "^4.7.4"
+    },
+    "peerDependencies": {
+        "react": ">=17.0.2",
+        "react-native": ">=0.68.2",
+        "react-native-linear-gradient": ">=2.5.6",
+        "react-native-reanimated": ">=2.8.0"
+    },
+    "react-native-builder-bob": {
+        "source": "src",
+        "output": "lib",
+        "targets": [
+            "commonjs",
+            "module",
+            "typescript"
+        ]
     }
 }

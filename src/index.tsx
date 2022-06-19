@@ -77,6 +77,8 @@ const ProgressiveImage = ({
             // Cleanup function
             return () => clearTimeout(timeout);
         }
+
+        return;
     }, [loaded]);
 
     return (
