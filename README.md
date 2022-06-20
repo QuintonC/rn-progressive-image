@@ -51,14 +51,11 @@
   Built with <span role="emoji">🖤&nbsp;</span> by <a href="https://github.com/QuintonC">Quinton Chester</a>
 </div>
 
-
 <br><br>
 
-![Video Demonstration](./img/rn-progressive-image.mp4)
+**INSERT VIDEO DEMONSTRATION HERE**
 
 ## Features
----
-<br>
 
 - Optimistic UI that allows you to give users context before the images load.
 - Customizability
@@ -68,11 +65,8 @@
 - Includes type definitions for widespread adoption and a better understanding of how the package works.
 - Optimized code which removes unused placeholder after the image has loaded.
 - Covered by unit tests so you can rest assured that the component will never let you down.
-<br>
 
 ## Table of Contents
----
-<br>
 
 * [Install](#installation)
 * [Usage](#usage)
@@ -82,18 +76,16 @@
 * [Considerations](#considerations)
 * [License](#license)
 
-<br>
-
 ## Installation
----
-<br>
 
 ```bash
 $ npm install rn-progressive-image
 ```
+
 <br>
 
 **Note**: This package makes use of other packages, specifically [react-native-reanimated](https://github.com/software-mansion/react-native-reanimated) and [react-native-linear-gradient](https://github.com/react-native-linear-gradient/react-native-linear-gradient). In order for this to work properly, you **must** follow the installation instructions for those packages. Not following these instructions will result in the package not working.
+<br>
 
 ```bash
 npm install react-native-reanimated react-native-linear-gradient
@@ -107,8 +99,6 @@ npm install react-native-reanimated react-native-linear-gradient
 <br>
 
 ## Usage
----
-<br>
 
 Import the package as follows:
 ```javascript
@@ -116,7 +106,7 @@ import ProgressiveImage from 'rn-progressive-image'
 ```
 <br>
 
-At the core, this is the simplest form of usage is as follows:
+The simplest form of usage is as follows:
 ```javascript
     <ProgressiveImage 
         source={{ uri: https://myimageprovider.com/myImagePath.jpg }}
@@ -125,12 +115,11 @@ At the core, this is the simplest form of usage is as follows:
 <br>
 
 ## Props
----
 <br>
 
 | Prop                  | Default      | Required | Description                                                                            |
 | :-------------------- | :----------- | :------- | :------------------------------------------------------------------------------------- |
-| `source`              |              | **true**     | The source for the image which will be lazy-loaded                                     |
+| `source`              |              | true     | The source for the image which will be lazy-loaded                                     |
 | `placeholder`         | `Shimmer`    | false    | The type of placeholder to be used, options are `Shimmer`, `Thumbnail` and `undefined` |
 | `style`               | A square that is equal to half of the device's width with a gray background. | false | Images use `StyleSheet.absoluteFillObject`, so define your desired style here and the images will automatically be set to cover the defined view. |
 | `thumbnailSource`     |              | false    | The source for the thumbnail image which will be used for the placeholder. This is only applicable when `placeholder` is `Thumbnail` |
@@ -143,8 +132,6 @@ At the core, this is the simplest form of usage is as follows:
 <br>
 
 ## Contributing
----
-<br>
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
@@ -166,7 +153,6 @@ Alternatively, feel free to open up [an issue](https://github.com/QuintonC/rn-pr
 <br><br>
 
 ### Import structure to follow when contributing
-<br>
 
 ```javascript
 // React
@@ -193,8 +179,7 @@ import { APP_NAME } from 'constants/index';
 <br>
 
 ## Versions
----
-<br>
+
 This section details any changes that have been implemented across versions. It will be starting with version 3.0.0 as that is the most recent version.
 <br>
 <br>
@@ -209,11 +194,8 @@ This section details any changes that have been implemented across versions. It 
 * Removed the usage of React Native's built-in Animated API.
 * Removed the ability to use different configurations such as `Spring`
 <br>
-<br>
 
 ## Considerations
----
-<br>
 
 Some decisions have been made (for now), which are to omit the addition of caching. While I believe that caching is important, I am uncertain if I want to include it in this package by default. And having it be another prop that you must define to use the package seems sloppy. However, in the future, it is possible that a new component could be added that introduces caching (e.g. `CachedProgressiveImage`).
 
@@ -236,6 +218,5 @@ Thoughts on how to implement this are as follows, but are not complete. To do th
 
 
 ## License
----
-<br>
+
 Licensed under the MIT License.
