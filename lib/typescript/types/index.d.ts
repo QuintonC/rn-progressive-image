@@ -16,7 +16,7 @@ interface IProgressiveImageWithShimmer extends IBaseProgressiveImage {
      */
     shimmerDuration?: number;
     blurRadius?: never;
-    thumbnailSource: never;
+    thumbnailSource?: never;
 }
 interface IProgressiveImageWithThumbnail extends IBaseProgressiveImage {
     /**

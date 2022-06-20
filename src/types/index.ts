@@ -22,7 +22,7 @@ interface IProgressiveImageWithShimmer extends IBaseProgressiveImage {
 
     // Disallow the following:
     blurRadius?: never;
-    thumbnailSource: never;
+    thumbnailSource?: never;
 }
 
 interface IProgressiveImageWithThumbnail extends IBaseProgressiveImage {

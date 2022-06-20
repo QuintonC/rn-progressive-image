@@ -27,7 +27,6 @@ const ProgressiveImage = ({
     style,
     inEasing = Easing.bezier(0.65, 0, 0.35, 1),
     outEasing = Easing.bezier(0.65, 0, 0.35, 1),
-
     animationDuration = 350,
     ...props
 }: ProgressiveImageProps) => {
@@ -87,7 +86,7 @@ const ProgressiveImage = ({
         <View style={[BaseStyle.container, style]}>
             {placeholderShouldRender ? (
                 <Animated.View style={[BaseStyle.image, placeholderStyle]}>
-                    {placeholder === 'Thumbnail' ? (
+                    {placeholder === 'Thumbnail' && props.thumbnailSource ? (
                         <Animated.Image
                             style={{ ...StyleSheet.absoluteFillObject }}
                             blurRadius={props.blurRadius ?? 3}
