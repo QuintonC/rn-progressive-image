@@ -1,1 +1,1 @@
-{"version":3,"names":[],"sources":["index.ts"],"sourcesContent":["export { athensGray, iron, silver } from './colors';\n"],"mappings":";;;;;;;;;;;;;;;;;;;;;;;;AAAA"}
+{"version":3,"names":[],"sources":["index.ts"],"sourcesContent":["export { athensGray, iron } from './colors';\n"],"mappings":";;;;;;;;;;;;;;;;;;AAAA"}

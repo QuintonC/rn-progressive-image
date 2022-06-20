@@ -1,1 +1,1 @@
-{"version":3,"names":["athensGray","iron","silver"],"sources":["index.ts"],"sourcesContent":["export { athensGray, iron, silver } from './colors';\n"],"mappings":"AAAA,SAASA,UAAT,EAAqBC,IAArB,EAA2BC,MAA3B,QAAyC,UAAzC"}
+{"version":3,"names":["athensGray","iron"],"sources":["index.ts"],"sourcesContent":["export { athensGray, iron } from './colors';\n"],"mappings":"AAAA,SAASA,UAAT,EAAqBC,IAArB,QAAiC,UAAjC"}

@@ -22,27 +22,27 @@ import { athensGray, iron } from './constants';
 import { ProgressiveImageProps } from './types';
 
 const ProgressiveImage = ({
-    smallSource,
-    largeSource,
+    placeholder = 'Shimmer',
+    source,
     style,
-    initialBlurRadius,
     inEasing = Easing.bezier(0.65, 0, 0.35, 1),
     outEasing = Easing.bezier(0.65, 0, 0.35, 1),
+
     animationDuration = 350,
-    shimmerColors = [athensGray, iron, athensGray],
-    shimmerDuration = 1000,
-    withShimmer,
+    ...props
 }: ProgressiveImageProps) => {
     const [loaded, setLoaded] = useState(false);
     const [placeholderShouldRender, setPlaceholderShouldRender] =
         useState(true);
 
-    const largeOpacity = useSharedValue(0);
-    const placeholderOpacity = useSharedValue(1); // This is used for both the shimmerPlaceholder and the small image
+    const imageOpacity = useSharedValue(0);
+
+    // This is used for both the shimmerPlaceholder and the small image
+    const placeholderOpacity = useSharedValue(1);
 
     const largeStyle = useAnimatedStyle(() => {
         return {
-            opacity: withTiming(largeOpacity.value, {
+            opacity: withTiming(imageOpacity.value, {
                 duration: animationDuration,
                 easing: inEasing,
             }),
@@ -65,7 +65,7 @@ const ProgressiveImage = ({
 
     useEffect(() => {
         if (loaded) {
-            largeOpacity.value = 1;
+            imageOpacity.value = 1;
 
             const timeout = setTimeout(
                 () => {
@@ -87,32 +87,31 @@ const ProgressiveImage = ({
         <View style={[BaseStyle.container, style]}>
             {placeholderShouldRender ? (
                 <Animated.View style={[BaseStyle.image, placeholderStyle]}>
-                    {smallSource ? (
+                    {placeholder === 'Thumbnail' ? (
                         <Animated.Image
                             style={{ ...StyleSheet.absoluteFillObject }}
-                            blurRadius={initialBlurRadius ?? 3}
-                            source={smallSource}
+                            blurRadius={props.blurRadius ?? 3}
+                            source={props.thumbnailSource}
                         />
-                    ) : withShimmer ? (
+                    ) : placeholder === 'Shimmer' ? (
                         <ShimmerEffect
-                            colors={shimmerColors}
-                            duration={shimmerDuration}
+                            colors={
+                                props.shimmerColors ?? [
+                                    athensGray,
+                                    iron,
+                                    athensGray,
+                                ]
+                            }
+                            duration={props.shimmerDuration ?? 1000}
                         />
-                    ) : (
-                        <View
-                            style={{
-                                ...StyleSheet.absoluteFillObject,
-                                backgroundColor: athensGray,
-                            }}
-                        />
-                    )}
+                    ) : null}
                 </Animated.View>
             ) : null}
 
             <Animated.Image
                 style={[BaseStyle.image, largeStyle]}
                 onLoad={() => setLoaded(true)}
-                source={largeSource}
+                source={source}
             />
         </View>
     );

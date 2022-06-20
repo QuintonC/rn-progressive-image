@@ -1,1 +1,1 @@
-export { athensGray, iron, silver } from './colors';
+export { athensGray, iron } from './colors';
