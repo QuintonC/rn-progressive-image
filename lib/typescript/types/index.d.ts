@@ -5,7 +5,7 @@ interface IProgressiveImageWithShimmer extends IBaseProgressiveImage {
      * This allows you to specify which of the two types of placeholders you'd like to utilize.
      * Default = 'Shimmer'.
      */
-    placeholder?: 'Shimmer';
+    placeholder: 'Shimmer' | undefined;
     /**
      * This allows you to define the colors in which you'd like your shimmer effect to have.
      * The default colors are [#F2F2F7, #DDDEE0, #F2F2F7]
@@ -23,7 +23,7 @@ interface IProgressiveImageWithThumbnail extends IBaseProgressiveImage {
      * This allows you to specify which of the two types of placeholders you'd like to utilize.
      * Default = 'Shimmer'.
      */
-    placeholder?: 'Thumbnail';
+    placeholder: 'Thumbnail';
     /**
      * blurRadius: the blur radius of the blur filter added to the image
      * @platform ios
