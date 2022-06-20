@@ -7,7 +7,7 @@ interface IProgressiveImageWithShimmer extends IBaseProgressiveImage {
      * This allows you to specify which of the two types of placeholders you'd like to utilize.
      * Default = 'Shimmer'.
      */
-    placeholder: 'Shimmer' | undefined;
+    placeholder?: 'Shimmer' | undefined;
 
     /**
      * This allows you to define the colors in which you'd like your shimmer effect to have.
