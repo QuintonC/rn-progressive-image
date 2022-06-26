@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1656210466834" clover="3.2.0">
+  <project timestamp="1656210466834" name="All files">
+    <metrics statements="21" coveredstatements="21" conditionals="19" coveredconditionals="19" methods="8" coveredmethods="8" elements="48" coveredelements="48" complexity="0" loc="21" ncloc="21" packages="1" files="1" classes="1"/>
+    <file name="index.tsx" path="/Users/quinton/Repos/rn-progressive-image/src/index.tsx">
+      <metrics statements="21" coveredstatements="21" conditionals="19" coveredconditionals="19" methods="8" coveredmethods="8"/>
+      <line num="29" count="1" type="stmt"/>
+      <line num="39" count="8" type="stmt"/>
+      <line num="41" count="8" type="stmt"/>
+      <line num="43" count="8" type="stmt"/>
+      <line num="46" count="8" type="stmt"/>
+      <line num="48" count="8" type="stmt"/>
+      <line num="49" count="13" type="stmt"/>
+      <line num="57" count="8" type="stmt"/>
+      <line num="58" count="14" type="stmt"/>
+      <line num="65" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="71" count="8" type="stmt"/>
+      <line num="73" count="2" type="stmt"/>
+      <line num="74" count="2" type="cond" truecount="2" falsecount="0"/>
+      <line num="79" count="8" type="stmt"/>
+      <line num="80" count="7" type="cond" truecount="2" falsecount="0"/>
+      <line num="81" count="2" type="stmt"/>
+      <line num="83" count="2" type="stmt"/>
+      <line num="85" count="1" type="stmt"/>
+      <line num="93" count="2" type="stmt"/>
+      <line num="96" count="5" type="stmt"/>
+      <line num="99" count="8" type="stmt"/>
+    </file>
+  </project>
+</coverage>

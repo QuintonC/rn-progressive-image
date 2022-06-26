@@ -1,7 +1,11 @@
-import { StyleSheet, Dimensions } from "react-native";
+// Packages
+import { Dimensions, StyleSheet } from 'react-native';
+
+// Constants
+import { iron } from './constants';
 
 // Get our dimensions from the useWindowDimensions hook
-const width = Dimensions.get("window").width;
+const width = Dimensions.get('window').width;
 
 export default StyleSheet.create({
     container: {
@@ -13,6 +17,8 @@ export default StyleSheet.create({
          */
         width: width * 0.5,
         height: width * 0.5,
+        backgroundColor: iron,
+        overflow: 'hidden',
     },
     image: {
         ...StyleSheet.absoluteFillObject,
