@@ -56,7 +56,9 @@
         "test": "jest",
         "test:coverage": "jest --coverage --watchAll=false",
         "test:update": "jest --coverage --watchAll=false --updateSnapshot",
-        "build": "bob build"
+        "build": "bob build && npm run copy-dts && npm run delete-dts.js",
+        "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" lib/typescript",
+        "delete-dts.js": "find ./lib/commonjs -name '*.d.js*' -delete && find ./lib/module -name '*.d.js*' -delete"
     },
     "devDependencies": {
         "@babel/core": "^7.18.5",
