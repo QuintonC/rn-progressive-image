@@ -53,7 +53,9 @@
 
 <br><br>
 
-**INSERT VIDEO DEMONSTRATION HERE**
+<div align="center">
+    <img src="https://user-images.githubusercontent.com/4250423/175797854-e6f07a8d-9305-4c5a-bef9-2aadf29143a5.gif" />
+</div>
 
 ## Features
 
@@ -122,13 +124,13 @@ _Note: using this component without specifying `thumbnailSource` will result in 
 | Prop                  | Default      | Required | Description                                                                            |
 | :-------------------- | :----------- | :------- | :------------------------------------------------------------------------------------- |
 | `source`              |              | true     | The source for the image which will be lazy-loaded                                     |
-| `style`               | A square that is equal to half of the device's width with a gray background. | false | Images use `StyleSheet.absoluteFillObject`, so define your desired style here and the images will automatically be set to cover the defined view. |
-| `thumbnailSource`     |              | false    | The source for the thumbnail image which will be used for the placeholder. This is only applicable when `placeholder` is `Thumbnail` |
-| `blurRadius`          | `3`          | false    | The blurRadius for the thumbnailImage. This is only applicable when `placeholder` is `Thumbnail` |
-| `shimmerColors`       | `[#F2F2F7, #DDDEE0, #F2F2F7]` | false    | The colors used for the shimmer effect. This is only applicable when `placeholder` is `Shimmer` |
-| `shimmerDuration`     | `1000`       | false    | The duration it takes for the shimmer to move across the View element. This is only applicable when `placeholder` is `Shimmer` |
-| `inEasing`           | `Easing.bezier(0.65, 0, 0.35, 1)` | false | This is the easing that is applied as the placeholder transitions out. |
-| `outEasing`           | `Easing.bezier(0.65, 0, 0.35, 1)` | false | This is the easing that is applied to the source image as it transitions in. |
+| `style`               | A square that is equal to half of the device's width with a gray background. | false | Images use `StyleSheet.absoluteFillObject`, so define your desired style here and the images will automatically be set to cover the defined view.                                                |
+| `thumbnailSource`     |              | false    | The source for the thumbnail image which will be used for the placeholder.             |
+| `blurRadius`          | `3`          | false    | The blurRadius for the thumbnailImage. iOS only per React Native implementation. There is a thought for improvement listed near the end of the README that discusses the potential for a blur view to be added to Android in a future release.                 |
+| `shimmerColors`       | `[#F2F2F7, #DDDEE0, #F2F2F7]` | false    | The colors used for the shimmer effect.                               |
+| `shimmerDuration`     | `1000`       | false    | The duration it takes for the shimmer to move across the View element.                 |
+| `inEasing`           | `Easing.bezier(0.65, 0, 0.35, 1)` | false | This is the easing applied to the source image as it transitions in.  |
+| `outEasing`           | `Easing.bezier(0.65, 0, 0.35, 1)` | false | This is the easing that is applied to the placeholder as it transitions out. |
 | `animationDuration`   | `350`        | false    | The transition duration for the image source fading in and the placeholder fading out. |
 | `onLoad`              |              | false    | An optional callback that is invoked when the source image has loaded. This will trigger prior to the placeholder unmounting. |
 | `testID`              |              | false    | Testing is important, and I understand that you will likely want to be able to test this component and the props within it. I've added a testID so you can do just that. |
@@ -188,18 +190,23 @@ This section details any changes that have been implemented across versions. It 
 <br>
 
 ### 3.0.0
-* Added the ability to switch between two different types of progressive loading, `Shimmer` or `Thumbnail`
-* Removed the unused component from the view hierarchy after the desired source has been loaded.
-* Generated typings with comments for better adoption.
-* Updated prop names (breaking change).
-* Wrote a custom `ShimmerEffect` component which is built on Reanimated with the usage of `react-native-linear-gradient`
-* Implemented new build features which streamline the building process and allow for better build outputs.
-* Removed the usage of React Native's built-in Animated API.
-* Removed the ability to use different configurations such as `Spring`
+- **Improvements**
+  * Added the ability to switch between two different types of progressive loading. Both are inferred via the types that you give the component. For the shimmer effect, do not supply a `thumbnailSource` prop and you will be using the types defined for the shimmer component and vice versa for the thumbnail based component.
+  * Removed the unused placeholder component from the view hierarchy after the desired source has been loaded.
+  * Generated typings with comments for better adoption and developer experience.
+  * Wrote a custom `ShimmerEffect` component which is built on Reanimated with the usage of `react-native-linear-gradient`
+  * Implemented new build features which streamline the building process and allow for better build outputs.
+  * Added full test coverage (100% coverage confirmed via coverage folder).
+  * Documentation improvements. Though this package is fairly simple, I want it to be one that continues to be easy to use, performant, and attractive to mobile developers and their users.
+- **Breaking changes**
+  * Updated prop names (breaking change).
+  * Removed the usage of React Native Animated API in favor of utilizing _only_ Reanimated.
+  * Removed the ability to use different configurations such as `Spring`.
 <br>
 
-## Considerations
+## Thoughts for further improvement
 
+### Caching
 Some decisions have been made (for now), which are to omit the addition of caching. While I believe that caching is important, I am uncertain if I want to include it in this package by default. And having it be another prop that you must define to use the package seems sloppy. However, in the future, it is possible that a new component could be added that introduces caching (e.g. `CachedProgressiveImage`).
 
 I've had some time to think about the best way to do this and I have two potential routes. One might include the use of [react-native-async-storage](https://github.com/react-native-async-storage/async-storage), where the base64 of an image is retrieved and a cache method is implemented to store the base64 of the image. This would be an object that gets stored as stringified JSON:
@@ -217,6 +224,9 @@ The other method involves the use of [rn-fetch-blob](https://github.com/joltup/r
 
 Thoughts on how to implement this are as follows, but are not complete. To do this, we could add an additional package that would help us achieve the desired behavior. The thought is to potentially include something such as [rn-fetch-blob](https://github.com/joltup/rn-fetch-blob). It has built-in caching functionality, however, there would
 <br>
+
+### Blur view on Android.
+While blurRadius is not natively supported on Android, it is possible to add a blurring view on top via other packages (or just through styling), which would allow Android users to also receive the same blur effect that makes this packaage so great. This may become an optional feature in the future so that it is not a breaking change.
 <br>
 
 
