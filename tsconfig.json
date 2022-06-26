@@ -2,7 +2,7 @@
     "compilerOptions": {
         "baseUrl": ".",
         "paths": {
-            "@gorhom/bottom-sheet": ["./src/index"]
+            "rn-progressive-image": ["./src/index"]
         },
         "allowUnreachableCode": false,
         "allowUnusedLabels": false,

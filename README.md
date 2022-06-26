@@ -114,13 +114,14 @@ The simplest form of usage is as follows:
 ```
 <br>
 
+Note that using this component without specifying `thumbnailSource` will result in the placeholder being a ShimmerEffect.
+
 ## Props
 <br>
 
 | Prop                  | Default      | Required | Description                                                                            |
 | :-------------------- | :----------- | :------- | :------------------------------------------------------------------------------------- |
 | `source`              |              | true     | The source for the image which will be lazy-loaded                                     |
-| `placeholder`         | `Shimmer`    | false    | The type of placeholder to be used, options are `Shimmer`, `Thumbnail` and `undefined` |
 | `style`               | A square that is equal to half of the device's width with a gray background. | false | Images use `StyleSheet.absoluteFillObject`, so define your desired style here and the images will automatically be set to cover the defined view. |
 | `thumbnailSource`     |              | false    | The source for the thumbnail image which will be used for the placeholder. This is only applicable when `placeholder` is `Thumbnail` |
 | `blurRadius`          | `3`          | false    | The blurRadius for the thumbnailImage. This is only applicable when `placeholder` is `Thumbnail` |

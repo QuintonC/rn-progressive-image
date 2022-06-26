@@ -38,6 +38,7 @@ export default ({ colors, duration }: ShimmerEffectProps) => {
 
     return (
         <View
+            testID="ProgressiveImageShimmerTest"
             style={{
                 ...StyleSheet.absoluteFillObject,
                 overflow: 'hidden',

@@ -1,14 +1,14 @@
 // Packages
-import { ImageProps, ImagePropsIOS, StyleProp, ViewStyle } from 'react-native';
+import {
+    ImageProps,
+    ImagePropsIOS,
+    StyleProp,
+    ViewProps,
+    ViewStyle,
+} from 'react-native';
 import { WithTimingConfig } from 'react-native-reanimated';
 
 interface IProgressiveImageWithShimmer extends IBaseProgressiveImage {
-    /**
-     * This allows you to specify which of the two types of placeholders you'd like to utilize.
-     * Default = 'Shimmer'.
-     */
-    placeholder?: 'Shimmer' | undefined;
-
     /**
      * This allows you to define the colors in which you'd like your shimmer effect to have.
      * The default colors are [#F2F2F7, #DDDEE0, #F2F2F7]
@@ -26,12 +26,6 @@ interface IProgressiveImageWithShimmer extends IBaseProgressiveImage {
 }
 
 interface IProgressiveImageWithThumbnail extends IBaseProgressiveImage {
-    /**
-     * This allows you to specify which of the two types of placeholders you'd like to utilize.
-     * Default = 'Shimmer'.
-     */
-    placeholder: 'Thumbnail';
-
     /**
      * blurRadius: the blur radius of the blur filter added to the image
      * @platform ios
@@ -75,6 +69,17 @@ interface IBaseProgressiveImage {
      * The amount of time that animations will run for (in milliseconds).
      */
     animationDuration?: number;
+
+    /**
+     * Invoked when the desired source loads successfully.
+     * This will trigger at the same time as the animation for the source image to load in.
+     */
+    onLoad?: ImageProps['onLoad'];
+
+    /**
+     * Used to locate this view in end-to-end tests.
+     */
+    testID?: ViewProps['testID'];
 }
 
 export type ProgressiveImageProps =

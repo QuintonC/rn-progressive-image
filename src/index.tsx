@@ -1,6 +1,11 @@
 // Packages
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, View } from 'react-native';
+import React, { useCallback, useEffect, useState } from 'react';
+import {
+    ImageLoadEventData,
+    NativeSyntheticEvent,
+    StyleSheet,
+    View,
+} from 'react-native';
 import Animated, {
     useSharedValue,
     useAnimatedStyle,
@@ -22,12 +27,13 @@ import { athensGray, iron } from './constants';
 import { ProgressiveImageProps } from './types';
 
 const ProgressiveImage = ({
-    placeholder = 'Shimmer',
     source,
     style,
     inEasing = Easing.bezier(0.65, 0, 0.35, 1),
     outEasing = Easing.bezier(0.65, 0, 0.35, 1),
     animationDuration = 350,
+    onLoad,
+    testID,
     ...props
 }: ProgressiveImageProps) => {
     const [loaded, setLoaded] = useState(false);
@@ -62,6 +68,14 @@ const ProgressiveImage = ({
         };
     });
 
+    const onLoadCallback = useCallback(
+        (event: NativeSyntheticEvent<ImageLoadEventData>) => {
+            setLoaded(true);
+            onLoad && onLoad(event);
+        },
+        [onLoad],
+    );
+
     useEffect(() => {
         if (loaded) {
             imageOpacity.value = 1;
@@ -72,7 +86,7 @@ const ProgressiveImage = ({
                 },
                 // Give this a slight delay so that we don't run
                 // into issues with flashes of empty content
-                animationDuration * 0.66,
+                animationDuration * 1.66,
             );
 
             // Cleanup function
@@ -83,16 +97,19 @@ const ProgressiveImage = ({
     }, [loaded]);
 
     return (
-        <View style={[BaseStyle.container, style]}>
+        <View style={[BaseStyle.container, style]} testID={testID}>
             {placeholderShouldRender ? (
-                <Animated.View style={[BaseStyle.image, placeholderStyle]}>
-                    {placeholder === 'Thumbnail' && props.thumbnailSource ? (
+                <Animated.View
+                    style={[BaseStyle.image, placeholderStyle]}
+                    testID="PlaceholderTestID">
+                    {props.thumbnailSource ? (
                         <Animated.Image
                             style={{ ...StyleSheet.absoluteFillObject }}
                             blurRadius={props.blurRadius ?? 3}
                             source={props.thumbnailSource}
+                            testID="ProgressiveImageThumbnailTest"
                         />
-                    ) : placeholder === 'Shimmer' ? (
+                    ) : (
                         <ShimmerEffect
                             colors={
                                 props.shimmerColors ?? [
@@ -103,13 +120,14 @@ const ProgressiveImage = ({
                             }
                             duration={props.shimmerDuration ?? 1000}
                         />
-                    ) : null}
+                    )}
                 </Animated.View>
             ) : null}
 
             <Animated.Image
+                testID="ProgressiveImageHighResImage"
                 style={[BaseStyle.image, largeStyle]}
-                onLoad={() => setLoaded(true)}
+                onLoad={onLoadCallback}
                 source={source}
             />
         </View>

@@ -58,3 +58,6 @@ buck-out/
 
 # CocoaPods
 */ios/Pods/
+
+# Generated files by react-native-builder-bob
+lib/
