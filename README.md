@@ -114,7 +114,7 @@ The simplest form of usage is as follows:
 ```
 <br>
 
-Note that using this component without specifying `thumbnailSource` will result in the placeholder being a ShimmerEffect.
+_Note: using this component without specifying `thumbnailSource` will result in the placeholder being a ShimmerEffect._
 
 ## Props
 <br>
@@ -130,6 +130,8 @@ Note that using this component without specifying `thumbnailSource` will result 
 | `inEasing`           | `Easing.bezier(0.65, 0, 0.35, 1)` | false | This is the easing that is applied as the placeholder transitions out. |
 | `outEasing`           | `Easing.bezier(0.65, 0, 0.35, 1)` | false | This is the easing that is applied to the source image as it transitions in. |
 | `animationDuration`   | `350`        | false    | The transition duration for the image source fading in and the placeholder fading out. |
+| `onLoad`              |              | false    | An optional callback that is invoked when the source image has loaded. This will trigger prior to the placeholder unmounting. |
+| `testID`              |              | false    | Testing is important, and I understand that you will likely want to be able to test this component and the props within it. I've added a testID so you can do just that. |
 <br>
 
 ## Contributing
