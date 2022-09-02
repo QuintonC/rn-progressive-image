@@ -108,6 +108,7 @@ const ProgressiveImage = ({
                             blurRadius={props.blurRadius ?? 3}
                             source={props.thumbnailSource}
                             testID="ProgressiveImageThumbnailTest"
+                            {...props.thumbnailProps}
                         />
                     ) : (
                         <ShimmerEffect
@@ -129,6 +130,7 @@ const ProgressiveImage = ({
                 style={[BaseStyle.image, largeStyle]}
                 onLoad={onLoadCallback}
                 source={source}
+                {...props}
             />
         </View>
     );
