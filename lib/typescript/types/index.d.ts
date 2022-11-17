@@ -59,6 +59,8 @@ interface IBaseProgressiveImage {
      * Used to locate this view in end-to-end tests.
      */
     testID?: ViewProps['testID'];
+    
+    imageProps?: any;
 }
 export declare type ProgressiveImageProps = IProgressiveImageWithShimmer | IProgressiveImageWithThumbnail;
 export interface ShimmerEffectProps {
