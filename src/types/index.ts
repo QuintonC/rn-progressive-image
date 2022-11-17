@@ -80,6 +80,9 @@ interface IBaseProgressiveImage {
      * Used to locate this view in end-to-end tests.
      */
     testID?: ViewProps['testID'];
+    
+    imageProps?: never;
+    thumbnailProps?: never;
 }
 
 export type ProgressiveImageProps =
