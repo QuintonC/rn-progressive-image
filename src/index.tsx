@@ -39,6 +39,9 @@ const ProgressiveImage = ({
     const [loaded, setLoaded] = useState(false);
     const [placeholderShouldRender, setPlaceholderShouldRender] =
         useState(true);
+    
+    const imageProps = props?.imageProps || {};
+    const thumbnailProps = props?.thumbnailProps || {};
 
     const imageOpacity = useSharedValue(0);
 
@@ -108,6 +111,7 @@ const ProgressiveImage = ({
                             blurRadius={props.blurRadius ?? 3}
                             source={props.thumbnailSource}
                             testID="ProgressiveImageThumbnailTest"
+                            {...thumbnailProps}
                         />
                     ) : (
                         <ShimmerEffect
@@ -129,6 +133,7 @@ const ProgressiveImage = ({
                 style={[BaseStyle.image, largeStyle]}
                 onLoad={onLoadCallback}
                 source={source}
+                {...imageProps}
             />
         </View>
     );
